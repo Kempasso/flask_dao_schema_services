@@ -13,7 +13,6 @@ movies_schema = MovieSchema(many=True)
 @movie_ns.route('/')
 class MoviesView(Resource):
     def get(self):
-        a = request.json
         res = tuple(*request.args.items())
         if res:
             movies = movie_service.filter(res)
